@@ -4,8 +4,8 @@
   "private": true,
   "main": "./bin/www",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node .",
-    "dev": "cross-env NODE_ENV=development nodemon .",
+    "start": "SET NODE_ENV=production&& node .",
+    "dev": "SET Node_ENV=development&& nodemon .",
     "amit": "node console"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
     "express": "~4.16.1",
     "google-auth-library": "^8.8.0",
     "googleapis": "^118.0.0",

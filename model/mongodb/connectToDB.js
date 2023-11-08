@@ -1,5 +1,7 @@
 const config = require("config");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv")
+dotenv.config();
 // console.log("con str", config.get("dbConfig.url"));
 const {NODE_ENV, DB_ADRESS } = process.env;
 // const connectToDB = () => {
@@ -24,12 +26,14 @@ const uri = process.env.MONGODB_URI; // Replace with your environment variable n
 // };
 
 const connectToDB = () => {
-  return mongoose.connect(
-  NODE_ENV === 'production' ? DB_ADRESS : 'mongodb://127.0.0.1:27017/final_project',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology:true,
- }
-);
+  if(process.env.NODE_ENV === 'production'){
+    console.log(process.env.NODE_ENV);
+    return mongoose.connect(process.env.DB_ADRESS)
+  }
+
+ if(process.env.NODE_ENV === 'development'){
+    console.log(process.env.NODE_ENV);
+    return mongoose.connect(process.env.MONGO_URL)
+  }
 }
 module.exports = connectToDB;

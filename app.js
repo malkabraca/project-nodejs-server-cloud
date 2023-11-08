@@ -9,7 +9,7 @@ const initialData = require("./initialData/initialData");
 const chalk = require("chalk");
 const app = express();
 
-console.log("file", config.get("file"));
+// console.log("file", config.get("file"));
 
 app.use(cors());
 app.use(logger)
