@@ -4,7 +4,7 @@
   "private": true,
   "main": "./bin/www",
   "scripts": {
-    "start": "SET NODE_ENV=production&& node .",
+    "start": "set NODE_ENV=production&& node .",
     "dev": "SET Node_ENV=development&& nodemon .",
     "amit": "node console"
   },
