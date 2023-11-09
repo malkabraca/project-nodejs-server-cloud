@@ -5,7 +5,7 @@ const generateToken = (payload, expDate = "30d") =>
   new Promise((resolve, reject) => {
     jwt.sign(
       payload,
-      config.get("jwt"),
+      process.env.JWT,
       {
         expiresIn: expDate,
       },
