@@ -18,7 +18,8 @@ const generateToken = (payload, expDate = "30d") =>
 
 const verifyToken = (token) =>
   new Promise((resolve, reject) => {
-    jwt.verify(token, config.get("jwt"), (err, payload) => {
+    // jwt.verify(token, config.get("jwt"), (err, payload) => {
+      jwt.verify(token,process.env.JWT, (err, payload) => {
       if (err) reject(err);
       else resolve(payload);
     });
